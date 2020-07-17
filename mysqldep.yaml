@@ -48,6 +48,6 @@ spec:
           mountPath: /var/lib/mysql
       volumes:
       - name: mysql-storage
-        hostpath:
-             path: /mdata
-             type: Directory
+        hostPath:
+            path: /mdata
+            type: Directory
