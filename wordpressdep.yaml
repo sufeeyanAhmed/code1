@@ -50,6 +50,6 @@ spec:
           mountPath: /var/www/html
       volumes:
       - name: wordpress-storage
-        hostpath:
+        hostPath:
              path: /data
              type: Directory
