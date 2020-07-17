@@ -5,17 +5,12 @@ metadata:
   labels:
     app: wordpress
 spec:
-  type: NodePort
+  ports:
+    - port: 3306
   selector:
     app: wordpress
-    tier: frontend
-  ports:
-      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
-    - port: 80
-      targetPort: 80
-      # Optional field
-      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
-      nodePort: 30007    
+    tier: mysql
+  clusterIP: None
 ---
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
